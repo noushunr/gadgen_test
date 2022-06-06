@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/user_list">
+
+
+    <fragment android:name="com.example.gadgeontest.ui.UserListFragment"
+        android:id="@+id/user_list"
+        android:label="user_list"
+        tools:layout="@layout/fragment_user_list">
+        <action
+            android:id="@+id/action_userListFragment_to_userDetailFragment"
+            app:destination="@id/user_detail"
+            app:popUpTo="@id/user_list"
+            />
+    </fragment>
+    <fragment android:name="com.example.gadgeontest.ui.UserDetailFragment"
+        android:id="@+id/user_detail"
+        android:label="user_detail"
+        tools:layout="@layout/fragment_user_detail">
+        <argument
+            android:name="item"
+            app:argType="com.example.gadgeontest.data.model.Data"/>
+    </fragment>
+</navigation>
